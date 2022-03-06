@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Hesaplama</title>
+</head>
+<body style="background-color: antiquewhite;">
+    
+        <form action="" method="POST"style="margin-top:50px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: large;">
+            <hr/>
+            {% csrf_token %}
+            Number: &nbsp;&nbsp;<input  type="text" name="number" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: medium;" >
+            <br><br/>
+            Midterm Exam: &nbsp;&nbsp;<input type="text" name="midterm_exam" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: medium;">
+            <br><br/>
+            Final Exam: &nbsp;&nbsp;<input type="text" name="final_exam" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: medium;">
+            <br><br/>
+            <input type="submit" value="Kaydet" style="margin-left: 350px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: medium;">
+            <br><br/>
+            <hr/>
+            {% if messages %}
+            {% for x in messages%}
+            <h2>{{x}}</h2>
+            {% endfor %}
+            {% endif %}
+        </form>
+    <ul style="list-style-type: none;list-style-type: none; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: large;">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <li>
+            <a  href="{% url 'index' %}"style="padding-right:30px; text-decoration: none">Back to Homepage <<==</a>
+        </li>
+    </ul>
+<div>
+    
+</div>
+</body>
+
+   

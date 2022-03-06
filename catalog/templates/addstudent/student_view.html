@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: antiquewhite;">
+    <form action="" method="post">
+        {% csrf_token %}
+        <br>
+        <input type="text" name="name" placeholder="Enter name" >
+        <br>
+        <input type="text" name="surname" placeholder="Enter surnname">
+        <br>
+        <input type="text" name="section" placeholder="Enter section" >
+        <br>
+        <input type="text" name="number" placeholder="Enter number">
+        <br>
+        <input type="text" name="midterm_exam" placeholder="Enter midterm exam">
+        <br>
+        <input type="text" name="final_exam" placeholder="Enter final exam">
+        <br>
+        <input type="text" name="exam_average" placeholder="Enter exam average">
+        <br>
+        <input type="text" name="letter_grade" placeholder="Enter letter grade">
+        <BR>
+        <input type="submit" value="Add Data">
+    </form>
+
+    <h1>View The Table</h1>
+    <a href=""><button>Fatch and Refresh</button></a>
+    <br>
+
+    <table>
+        <thead>
+            <tr> 
+                <th>Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                <th>Surname &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                <br>
+                <th>Section &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                <th>Number &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                <th>Midterm Exam &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                <th>Final Exam &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                <th>Exam Average &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                <th>Letter Grade &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+           </tr>
+              
+        </thead>
+
+        {% for instance in data %}
+            <tr>
+                <td>{{ instance.fields.name }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>{{ instance.fields.surname }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>{{ instance.fields.section }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>{{ instance.fields.number }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>{{ instance.fields.midterm_exam }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>{{ instance.fields.final_exam }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>{{ instance.fields.exam_average }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>{{ instance.letter_grade }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            </tr>
+
+        {% endfor %}
+    </table>
+    
+</body>
+</html>

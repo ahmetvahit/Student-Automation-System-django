@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HomePage</title>
+</head>
+<body style="background-color: antiquewhite;">
+    <h1 style="margin-left:50px;margin-top:50px;">Welcome to Student Automation System</h1>
+    <div class="container">
+        <a href="{% url 'index' %}" style="margin-left:-30px;"></a>
+        <ul style="margin-left:50px; list-style-type: none; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: large;">
+            <li>
+                <a  href="{% url 'index' %}"style="padding-right:30px;text-decoration: none;"> Home</a>
+            </li>
+            <li>
+                <br>
+                <a  href="{% url 'student_form' %}"style="padding-right:30px; text-decoration: none;"> Click to Add Student</a>
+            </li>
+            <li>
+                <br>
+                <a  href="{% url 'dataview' %}"style="padding-right:30px; text-decoration: none;"> Click to See the Student List</a>
+            </li>
+            <li>
+                <br>
+                <a  href="{% url 'noteadd' %}"style="padding-right:30px; text-decoration: none;"> Click for Adding Notes and Average Calculation Procedures</a>
+            </li>
+        </ul>
+    </div>    
+    
+    
+</body>
